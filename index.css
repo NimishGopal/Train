@@ -1,0 +1,41 @@
+.tunnel {
+    width: 100%;
+    height: 120px;
+    border: 1px solid;
+    display: grid;
+    place-items: center;
+}
+.train{
+    display: grid;
+    grid-auto-flow: column;
+    width: calc(100% - 2rem);;
+    padding: 0 1rem;
+    grid-column-gap: 5px;
+}
+.input-wrapper {
+    margin-bottom: 2rem;
+}
+.input {
+    padding: 0.625rem;
+}
+.button {
+    padding: 0.625rem 2rem;
+    background: #000;
+    color: #FFF;
+    font-size: 1rem;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.button:focus {
+    outline: none;
+}
+.train_bogey {
+    width: 20px;
+    height: 20px;
+    display: inherit;
+    place-items: center;
+    border-radius: 100%;
+    border: 1px solid;
+}
