@@ -65,11 +65,18 @@ document.addEventListener('DOMContentLoaded', () => {
     startCTA.addEventListener('click', async () => {
         clearInterval(interval)
         console.log("HERE")
-        const tunnelCapacity = +document.querySelector("#trainCapacity").value;
-        const trainLength = +document.querySelector("#trainLength").value;
-        const trainData = await getTrainData(trainLength);
-        console.log(trainData)
-        interval = startTrain(trainEle, trainData, tunnelCapacity)
+        const tunnelCapacity = document.querySelector("#trainCapacity").value;
+        const trainLength = document.querySelector("#trainLength").value;
+        if (trainLength === "") {
+            alert("Total bogeys is required");
+            return;
+        }
+        if(tunnelCapacity === "") {
+            alert("Tunnel capacity is required");
+            return;
+        }
+        const trainData = await getTrainData(+trainLength);
+        interval = startTrain(trainEle, trainData, +tunnelCapacity)
     })
     stopCTA.addEventListener('click', async () => {
         clearInterval(interval);
