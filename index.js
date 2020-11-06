@@ -61,10 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const startCTA = document.querySelector("#start");
     const stopCTA = document.querySelector("#stop");
     let interval = null;
-    console.log("TEST")
     startCTA.addEventListener('click', async () => {
         clearInterval(interval)
-        console.log("HERE")
         const tunnelCapacity = document.querySelector("#trainCapacity").value;
         const trainLength = document.querySelector("#trainLength").value;
         if (trainLength === "") {
