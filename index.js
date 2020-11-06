@@ -13,13 +13,13 @@ const getTrainMarkup = (trainEle, tunnel, tunnelCapacity) => {
 }
 const runTrain = (trainEle, tunnel, tunnelCapacity, count, trainData) => {
     if (count < tunnelCapacity || count === 0) {
-        tunnel.unshift(trainData[count]["_id"]);
+        tunnel.unshift(trainData[count] ? trainData[count]["_id"] : " ");
         getTrainMarkup(trainEle, tunnel, tunnelCapacity)
         return count
     }
     else if (count < trainData.length) {
         tunnel.pop();
-        tunnel.unshift(trainData[count]["_id"])
+        tunnel.unshift(trainData[count] ? trainData[count]["_id"] : " ")
         getTrainMarkup(trainEle, tunnel, tunnelCapacity)
         return count
     }
