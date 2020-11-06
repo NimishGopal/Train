@@ -73,6 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
             alert("Tunnel capacity is required");
             return;
         }
+        if(+trainLength < 0){
+            alert("Total bogeys should be a positive number");
+            return;
+        }
+        if (+tunnelCapacity < 0) {
+            alert("Tunnel capacity should be a positive number");
+            return;
+        }
         const trainData = await getTrainData(+trainLength);
         interval = startTrain(trainEle, trainData, +tunnelCapacity)
     })
